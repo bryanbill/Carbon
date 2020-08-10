@@ -1,0 +1,112 @@
+{
+  "name": "carbon",
+  "version": "4.7.16",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test:e2e": "npm run cy:run --",
+    "deploy": "now -S carbon-app",
+    "prettier": "prettier --config .prettierrc --write {.,components,lib,pages}/*.js {components,lib,pages}/**/*.js",
+    "lint": "eslint .",
+    "contrib:add": "all-contributors add",
+    "contrib:build": "all-contributors generate",
+    "cy:run": "cypress run --config-file cypress/config.json",
+    "cy:open": "cypress open --config-file cypress/config.json",
+    "preinstall": "node ./node_modules/use-climate-change-reminder/index.js || exit 0"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^9.5.0",
+    "@reach/visually-hidden": "^0.10.4",
+    "acorn": "^7.3.1",
+    "actionsack": "^0.0.13",
+    "axios": "^0.19.2",
+    "cm-show-invisibles": "^3.0.1",
+    "codemirror": "^5.53.2",
+    "codemirror-graphql": "^0.12.0",
+    "codemirror-mode-elixir": "^1.1.2",
+    "codemirror-solidity": "^0.2.2",
+    "date-fns": "^2.14.0",
+    "dom-to-image": "^2.6.0",
+    "downshift": "^5.4.5",
+    "dropperx": "^1.0.1",
+    "eitherx": "^1.0.2",
+    "email-validator": "^2.0.4",
+    "escape-goat": "^3.0.0",
+    "firebase": "^7.17.1",
+    "graphql": "^15.2.0",
+    "highlight.js": "^10.1.1",
+    "kind-of": "^6.0.3",
+    "lodash": "^4.17.19",
+    "lodash.debounce": "^4.0.8",
+    "lodash.omitby": "^4.6.0",
+    "match-sorter": "^4.1.0",
+    "minimist": "^1.2.5",
+    "morphmorph": "^0.1.3",
+    "ms": "^2.1.2",
+    "next": "^9.5.0",
+    "next-offline": "^5.0.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-click-outside": "^3.0.0",
+    "react-codemirror2": "^7.1.0",
+    "react-color": "^2.18.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^16.13.1",
+    "react-image-crop": "^6.0.16",
+    "react-is": "^16.13.1",
+    "react-mailchimp-subscribe": "^2.1.0",
+    "react-stripe-elements": "^6.1.2",
+    "react-syntax-highlight": "^15.3.1",
+    "serialize-javascript": "^3.0.0",
+    "tohash": "^1.0.2",
+    "use-climate-change-reminder": "^0.0.7"
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.12.1",
+    "all-contributors-cli": "^6.16.1",
+    "babel-eslint": "^10.1.0",
+    "cypress": "^4.9.0",
+    "eslint": "^7.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "now": "^19.1.1",
+    "now-release": "^0.0.2",
+    "wait-on": "^5.0.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "prettier --config .prettierrc --write"
+    ],
+    ".all-contributorsrc": [
+      "npm run contrib:build"
+    ]
+  },
+  "description": "Create and share beautiful images of your source code",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbon-app/carbon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carbon-app/carbon/issues"
+  },
+  "homepage": "https://carbon.now.sh",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/carbon-app"
+  }
+}
